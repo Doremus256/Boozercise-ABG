@@ -5,6 +5,7 @@ $(document).on("click", "#submitButton", function(){
    
 });
 
+// created variables for user to enter data to calculate daily calorie requirements
 var button = document.querySelector('.button')
 var inputValue = document.querySelector('.inputValue')
 var height = document.querySelector('.height')
@@ -12,7 +13,14 @@ var age = document.querySelector('.age')
 var gender = document.querySelector('.gender')
 var weigth = document.querySelector('.weight')
 
+// use may select drink choices
 var drinkChoices = ["beer 12 oz", "wine 5oz", "Spirits 1.5oz"];
+var drinkCaloriesPerServing = ["132", "123", "100"]
+
+// user enters number of drinks consumed per week according to choices
+var drinksPerWeek = prompt("how many drinks to you consume in a week")
+
+// number of drinks entered is multiplied by the appropiate calorie value
 
 var exerciseChoices = ["running", "swimmimg", "walking", "HIIT" ,"yoga" ,"stength training", "zumba"]
 
