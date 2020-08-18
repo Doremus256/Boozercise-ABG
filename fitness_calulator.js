@@ -12,7 +12,7 @@ var height = document.querySelector('.height')
 var age = document.querySelector('.age')
 var gender = document.querySelector('.gender')
 var weigth = document.querySelector('.weight')
-// Brad adding variables for Healthy Recipes API:
+
 
 // use may select drink choices
 var drinkChoices = ["beer 12 oz", "wine 5oz", "Spirits 1.5oz"];
@@ -36,7 +36,6 @@ var settings = {
 		"x-rapidapi-key": "0fd6027417msh0e87a8b18391847p1ad365jsn08a6f4226710"
 	}
 }
-
 $.ajax(settings).done(function (response) {
 	console.log(response);
 });
