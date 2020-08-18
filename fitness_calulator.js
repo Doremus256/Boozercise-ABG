@@ -12,6 +12,9 @@ var height = document.querySelector('.height')
 var age = document.querySelector('.age')
 var gender = document.querySelector('.gender')
 var weigth = document.querySelector('.weight')
+// Brad creating variables for Healthy Recipes API
+var targetCalories = document.querySelector('.targetCalories')
+var timeFrame = document.querySelector('.timeFrame')
 
 
 // use may select drink choices
@@ -41,7 +44,7 @@ $.ajax(settings).done(function (response) {
 });
 
 
-// Brad adding JS for Healthy Recipes API:
+// Brad adding JQ for Healthy Recipes API: (lines 48-70)
 var settings = {
 	"async": true,
 	"crossDomain": true,
@@ -54,5 +57,17 @@ var settings = {
 }
 $.ajax(settings).done(function (response) {
 	console.log(response);
-});
+		$("targetCalories").append(`<div class=card>
+		<p>Meal Name: ${response.meals.title}</p>
+		<p>Calories: ${response.nutrients.calories}</p>
+		`)
+	});
+
+	$(".targetCalories").on("click", function(response) {
+		event.preventDefault()
+		let weeklyCalories = $(".targetCalories").val()
+		console.log(weeklyCalories)
+	})
+// End of the Healthy Recipes API code (lines 48-70)
+
 
