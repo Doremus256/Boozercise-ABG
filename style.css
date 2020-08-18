@@ -1,0 +1,31 @@
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+
+@include icon-button.core-styles;
+body, html {
+    background-color: rgb(146, 218, 236);
+}
+.space {
+    padding-top: 70px;
+}
+.demo-grid-ruler {
+    padding-top: 30px;
+}
+.col3 {
+    border-style: solid;
+    border-color: blue;
+    background-color: lightblue;
+    text-align: center;
+    border-radius: 5px;
+    color: red;
+
+}
+.col4 {
+    border-style: solid;
+    border-color: blue;
+    background-color: lightblue;
+    text-align: center;
+    border-radius: 5px;
+    color: red;
+
+}
