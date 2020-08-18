@@ -1,4 +1,4 @@
-console.log("con u c me")
+console.log("can u c me")
 
 $(document).on("click", "#submitButton", function(){
    var height =  $("#enterHeight").val();
@@ -11,6 +11,10 @@ var height = document.querySelector('.height')
 var age = document.querySelector('.age')
 var gender = document.querySelector('.gender')
 var weigth = document.querySelector('.weight')
+
+var drinkChoices = ["beer 12 oz", "wine 5oz", "Spirits 1.5oz"];
+
+var exerciseChoices = ["running", "swimmimg", "walking", "HIIT" ,"yoga" ,"stength training", "zumba"]
 
 
 var settings = {
