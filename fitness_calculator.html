@@ -1,39 +1,69 @@
+<!-- Combine JS and HTML -->
+
+<!-- Comment places where code is needed -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boozercise Fitness Calulator</title>
-    <!-- <script type="text/javascript" src="./jquery-3.4.1.min.js"></script> -->
-    <script> src="jquery-3.5.1.min.js" </script>
-    
+    <script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+    <script> src = "jquery-3.5.1.min.js" </script>
+
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 </head>
+
 <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+                    aria-label="Open navigation menu"></button>
+                <span class="mdc-top-app-bar__title">BOOZERCIZE</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                    aria-label="Favorite"></button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                    aria-label="Search"></button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                    aria-label="Options"></button>
+            </section>
+        </div>
+    </header>
     
-   
-   
-
-
-   <div class="input">
-    <input type="text" class="inputValue" id="enterHeight" placeholder="Enter your height">
-    <button id="submitButton">Submit</button>
-    <!-- <input type="submit" value="submit" class="button"> -->
-
-    <input type="text" class="inputValue" placeholder="Enter your age">
-    <input type="submit" value="submit" class="button">
-    <input type="text" class="inputValue" placeholder="Enter your gender">
-    <input type="submit" value="submit" class="button">
-    <input type="text" class="inputValue" placeholder="Enter your weight">
-    <input type="submit" value="submit" class="button">
-   
-</div> 
+    
+    <h2>TITLE</h2>
 
 
 
+          <!-- <div class="mdc-layout-grid cell--12-col">12
+            <div class="mdc-layout-grid"> -->
+                <!-- Button 1 -->
+              <!-- <div class="mdc-layout-grid"><span><input type="text" class="inputValue" id="enterHeight" placeholder="Enter your height">
+                <button id="submitButton">Submit</button></span></div> -->
+                <!-- Button 2 -->
+            <!-- <div class="mdc-layout-grid"><span><input type="text" class="inputValue" placeholder="Enter your age">
+                <input type="submit" value="submit" class="button"></span></div> -->
+                <!-- Button 3 -->
+            <!-- <div class="mdc-layout-grid"><input type="text" class="inputValue" placeholder="Enter your gender">
+                <input type="submit" value="submit" class="button"></div> -->
+                <!-- Button 4 -->
+            <!-- <div class="mdc-layout-grid"><input type="text" class="inputValue" placeholder="Enter your weight">
+                <input type="submit" value="submit" class="button"></div> -->
 
+            <!-- </div>
+          </div>
+        </div>
+         -->
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="fitness_calulator.js"></script>
 </body>
+
 </html>
