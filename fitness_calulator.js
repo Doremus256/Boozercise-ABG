@@ -1,20 +1,15 @@
-
-
-// var button = $('.button');
-// var inputValue = $('.inputValue');
-
-const dialog = new
- mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
+// const dialog = new
+//  mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
     
-dialog.show();
+// dialog.show();
 
-dialog.listen('MDCDialog:accept', function() {
-  console.log('accepted');
-})
+// dialog.listen('MDCDialog:accept', function() {
+//   console.log('accepted');
+// })
 
-dialog.listen('MDCDialog:cancel', function() {
-  console.log('canceled');
-});
+// dialog.listen('MDCDialog:cancel', function() {
+//   console.log('canceled');
+// });
 
 $(document).on("click", "#submitButton", function(){
 
@@ -45,6 +40,7 @@ var weigth = document.querySelector('.weight')
 var targetCalories = document.querySelector('.targetCalories')
 var timeFrame = document.querySelector('.timeFrame')
 
+
 // use may select drink choices
 var drinkChoices = ["beer 12 oz", "red wine 5oz", "white wine 5oz", "Spirits 1.5oz"];
 var drinkCaloriesPerServing = ["132", "123", "123", "100"]
@@ -68,8 +64,8 @@ function getData(height, age, gender, weight) {
         .then(function (apiResponse){
             console.log(apiResponse)
             $(".bmrResults").html(`
-            <h2>${apiResponse.data.BMR}</h2>
-            <h2>${apiResponse.data.goals.BMR["Weight loss"].calory}</h2>`)
+            <h2>Calories to maintain weight: ${apiResponse.data.BMR}</h2>`)
+            $(".Goals").html(`<h2>Calories to lose weight: ${apiResponse.data.goals.BMR["Weight loss"].calory}</h2>`)
             localStorage.setItem("bmiResults", JSON.stringify(apiResponse))
         })
 
@@ -81,7 +77,7 @@ var settings = {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-		"x-rapidapi-key": "72625e52a9msha06ed784ebb8fe6p1c3b8ejsnd07a4dfa968e"
+		"x-rapidapi-key": "72625e52a9msha06ed784ebb8fe6p1c3b8ejsnd07a4dfa968e",
 	}
 }
 $.ajax(settings).done(function (response) {
@@ -96,8 +92,11 @@ $.ajax(settings).done(function (response) {
 		event.preventDefault()
 		let weeklyCalories = $(".targetCalories").val()
 		console.log(weeklyCalories)
-	})
+	})}
 // End of the Healthy Recipes API code (lines 48-70)
+
+
+
 // ==================ALCOHOL API=====
 // let beverage = {gin};
 // var settings = {
@@ -107,12 +106,12 @@ $.ajax(settings).done(function (response) {
 // 	"method": "GET",
 // 	"headers": {
 // 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-// 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
-	}
-}
+// 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"}}
+
+
 
 // *****************gonna work on this today**********
-// let beverage = {};
+// let beverage = {}
 // var settings = {
 // 	"async": true,
 // 	"crossDomain": true,
@@ -121,10 +120,9 @@ $.ajax(settings).done(function (response) {
 // 	"headers": {
 // 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
 // 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
-// 	}
+// 	}}
+
+// $.ajax(settings).done(function (response)) {
+//   console.log(response);
 // }
 
-// $.ajax(settings).done(function (response) {
-// 	console.log(response);
-
-}
