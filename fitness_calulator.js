@@ -4,7 +4,7 @@
 
 const dialog = new
  mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
-=======
+
 // const dialog = new
 //  mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
 
@@ -115,7 +115,7 @@ $.ajax(settings).done(function (response) {
 // 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
 
 // 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
-	}
+	
 
 // 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"}}
 
