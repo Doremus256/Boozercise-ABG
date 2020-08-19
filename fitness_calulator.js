@@ -1,5 +1,4 @@
 
-
 // var button = $('.button');
 // var inputValue = $('.inputValue');
 
@@ -46,8 +45,8 @@ var targetCalories = document.querySelector('.targetCalories')
 var timeFrame = document.querySelector('.timeFrame')
 
 // use may select drink choices
-var drinkChoices = ["beer 12 oz", "red wine 5oz", "white wine 5oz", "Spirits 1.5oz"];
-var drinkCaloriesPerServing = ["132", "123", "123", "100"]
+var drinkChoices = ["beer 12 oz", "red wine 5oz", "Spirits 1.5oz"];
+var drinkCaloriesPerServing = ["132", "123", "100"]
 
 // user enters number of drinks consumed per week according to choices
 //var drinksPerWeek = prompt("how many drinks to you consume in a week")
@@ -109,7 +108,7 @@ $.ajax(settings).done(function (response) {
 // 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
 // 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
 	}
-}
+
 
 // *****************gonna work on this today**********
 // let beverage = {};
@@ -127,4 +126,4 @@ $.ajax(settings).done(function (response) {
 // $.ajax(settings).done(function (response) {
 // 	console.log(response);
 
-}
+
