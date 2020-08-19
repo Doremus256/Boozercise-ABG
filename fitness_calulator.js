@@ -13,6 +13,7 @@ $(document).on("click", "#submitButton", function(){
     var weigth = $('.weight').val();
 
     console.log(height);
+
     getData(height, age, gender, weigth);
 
     $('#height').empty();
@@ -49,51 +50,21 @@ var drinkCaloriesPerServing = ["132", "123", "123", "100"]
 var exerciseChoices = ["running", "swimmimg", "walking", "HIIT" ,"yoga" ,"stength training", "zumba"]
 var exerciseCaloriesPerHalfHour = ["372", "300", "180", "374", "120", "90", "210"]
 
-
-
-
-
-function getData(height, age, gender, weight){
-
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth="+height+"&age="+age+"&gender="+gender+"&weigth="+weight,
-        "method": "GET",
-        "headers": {
+function getData(height, age, gender, weight) {
+    $.ajax({
+        url: "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth="+height+"&age="+age+"&gender="+gender+"&weigth="+weight,
+        type: "GET", 
+        headers: {
             "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
-            "x-rapidapi-key": "0fd6027417msh0e87a8b18391847p1ad365jsn08a6f4226710"
-        }
-    }
-
-    $.ajax(settings).done(function (response) {
-    console.log(response);
-    console.log(response.data);
-    console.log(response.data.goals);
-
-    var fitnessTrackerURL = `"url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth="+height+"&age="+age+"&gender="+gender+"&weigth="+weigth`
-
-	    $.ajax({url:fitnessTrackerURL,method: "GET"
-            .then(function (data){
-
-            })
+            "x-rapidapi-key": "72625e52a9msha06ed784ebb8fe6p1c3b8ejsnd07a4dfa968e"
+        }})
+        .then(function (apiResponse){
+            console.log(apiResponse)
+            $(".bmrResults").html(`
+            <h2>${apiResponse.data.BMR}</h2>
+            <h2>${apiResponse.data.goals.BMR["Weight loss"].calory}</h2>`)
+            localStorage.setItem("bmiResults", JSON.stringify(apiResponse))
         })
-    $(".bmrResults").append(data)
-
-    $(".goals").append(data.goals)
-
-        //after jax call has been fired, any html manipulation goes here
-        
-        //look into es6 temperal literals 
-
-    });
-    $(document).ready(function(){
-        $('button').click(function(){
-            $('ul').toggleClass('active')
-        });
-
- });
-};
 
 // JS code for Fitness Calculator API
 var settings = {
@@ -103,14 +74,14 @@ var settings = {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
-		"x-rapidapi-key": "0fd6027417msh0e87a8b18391847p1ad365jsn08a6f4226710"
+		"x-rapidapi-key": "0fd6027417msh0e87a8b18391847p1ad365jsn08a6f4226710",
 	}
 }
+
 $.ajax(settings).done(function (response) {
 	console.log(response);
 	$("")
 });
-
 
 // Brad adding JQ for Healthy Recipes API: (lines 48-70)
 var settings = {
@@ -154,3 +125,4 @@ $.ajax(settings).done(function (response) {
 // $.ajax(settings).done(function (response) {
 // 	console.log(response);
 
+}
