@@ -168,3 +168,6 @@ ul li a:hover {
     position: fixed;
 }
 
+.mdc-dialog {
+    position: fixed;
+}
