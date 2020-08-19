@@ -163,11 +163,11 @@ ul li a:hover {
 .navTitle {
     background-color: #e04530;
 }
-.intro {
+/* .intro {
     width: 100%;
     background-color: rgb(240, 215, 178);
-    position: block;
-}
+    position: flex;
+} */
 .subButton:hover, .subButton:focus{
     background-color: rgba(red, 0,0, .6);
     color: black;
