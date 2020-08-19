@@ -1,9 +1,23 @@
-@use "@material/icon-button";
-@use "@material/top-app-bar/mdc-top-app-bar";
+body{
+    font-family: Arial, Helvetica, sans-serif;  
+    font-size: 17px;
+    line-height: 1.6;
+}
+.input {
+    padding-top: 100px;
+}
 
-@include icon-button.core-styles;
-body, html {
-    background-color: rgb(146, 218, 236);
+.container {
+    padding-top: 200px;
+}
+
+.mdc-layout-grid {
+    justify-content: center;
+}
+
+.demo-grid-1 {
+    padding: 200px;
+    background-color: (146, 218, 236);
 }
 .space {
     padding-top: 70px;
@@ -11,19 +25,28 @@ body, html {
 .demo-grid-ruler {
     padding-top: 80px;
 }
-.col3 {
-    border-style: solid;
-    border-color: blue;
-    background-color: lightblue;
-    text-align: center;
-    border-radius: 5px;
-    color: red;
 
+/* .col1{
+    background-color: #e04530;
+    text-align: center;
+    color: whitesmoke;
+    padding: auto;
+} */
+.col3 {
+    background-color: #e04530;
+    text-align: center;
+    color: whitesmoke;
+    padding: 20px;
+    
+}
+.col2-5 {
+    background-color: whitesmoke;
+    text-align: center;
+    color: #e04530;
+    padding: 20px;
 }
 .col4 {
-    border-style: solid;
-    border-color: blue;
-    background-color: lightblue;
+    background-color: #e04530;
     text-align: center;
     border-radius: 5px;
     color: red;
@@ -99,3 +122,50 @@ ul li a {
 ul li a:hover {
     background: #0d7ad0;
 }
+
+    color: whitesmoke;
+    padding: 20px;
+    box-shadow: black;
+}
+.col5 {
+    background-color: whitesmoke;
+    text-align: center;
+    color: #e04530;
+    padding: 20px;
+}
+.center {
+    text-align: center;
+    background-color: whitesmoke;
+    text-align: center;
+    color: #e04530;
+    padding: 20px;
+}
+.col2-5:hover{
+    border-style: solid;
+    border-width: 5px;
+    border-bottom-width: 10px;
+    border-color: rgba(0, 0, 0, .6);
+}
+.col3:hover{
+    border-style: solid;
+    border-width: 5px;
+    border-bottom-width: 10px;
+    border-color: rgba(0, 0, 0, .6);
+}
+.navcolor {
+    background-color: #332c2b;
+}
+.navTitle {
+    background-color: #e04530;
+}
+.intro {
+    width: 100%;
+    background-color: rgb(240, 215, 178);
+}
+.subButton:hover, .subButton:focus{
+    background-color: rgba(red, 0,0, .6);
+    color: black;
+    border: black;
+    border-width: 10px;
+}
+
