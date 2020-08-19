@@ -1,9 +1,20 @@
 
 
-var button = $('.button');
-var inputValue = $('.inputValue');
+// var button = $('.button');
+// var inputValue = $('.inputValue');
 
+const dialog = new
+ mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
+    
+dialog.show();
 
+dialog.listen('MDCDialog:accept', function() {
+  console.log('accepted');
+})
+
+dialog.listen('MDCDialog:cancel', function() {
+  console.log('canceled');
+});
 
 $(document).on("click", "#submitButton", function(){
 
@@ -34,10 +45,6 @@ var weigth = document.querySelector('.weight')
 var targetCalories = document.querySelector('.targetCalories')
 var timeFrame = document.querySelector('.timeFrame')
 
-
-
-
-
 // use may select drink choices
 var drinkChoices = ["beer 12 oz", "red wine 5oz", "white wine 5oz", "Spirits 1.5oz"];
 var drinkCaloriesPerServing = ["132", "123", "123", "100"]
@@ -54,7 +61,7 @@ function getData(height, age, gender, weight) {
     $.ajax({
         url: "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth="+height+"&age="+age+"&gender="+gender+"&weigth="+weight,
         type: "GET", 
-        headers: {
+            headers: {
             "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
             "x-rapidapi-key": "72625e52a9msha06ed784ebb8fe6p1c3b8ejsnd07a4dfa968e"
         }})
@@ -65,23 +72,6 @@ function getData(height, age, gender, weight) {
             <h2>${apiResponse.data.goals.BMR["Weight loss"].calory}</h2>`)
             localStorage.setItem("bmiResults", JSON.stringify(apiResponse))
         })
-
-// JS code for Fitness Calculator API
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=180&age=25&gender=male&weigth=70",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
-		"x-rapidapi-key": "0fd6027417msh0e87a8b18391847p1ad365jsn08a6f4226710",
-	}
-}
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-	$("")
-});
 
 // Brad adding JQ for Healthy Recipes API: (lines 48-70)
 var settings = {
@@ -108,8 +98,20 @@ $.ajax(settings).done(function (response) {
 		console.log(weeklyCalories)
 	})
 // End of the Healthy Recipes API code (lines 48-70)
+// ==================ALCOHOL API=====
+// let beverage = {gin};
+// var settings = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + beverage,
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+// 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
+	}
+}
 
-
+// *****************gonna work on this today**********
 // let beverage = {};
 // var settings = {
 // 	"async": true,
