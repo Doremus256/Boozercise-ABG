@@ -1,9 +1,20 @@
 
 
-var button = $('.button');
-var inputValue = $('.inputValue');
+// var button = $('.button');
+// var inputValue = $('.inputValue');
 
+const dialog = new
+ mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
+    
+dialog.show();
 
+dialog.listen('MDCDialog:accept', function() {
+  console.log('accepted');
+})
+
+dialog.listen('MDCDialog:cancel', function() {
+  console.log('canceled');
+});
 
 $(document).on("click", "#submitButton", function(){
 
@@ -49,7 +60,18 @@ var drinkCaloriesPerServing = ["132", "123", "123", "100"]
 var exerciseChoices = ["running", "swimmimg", "walking", "HIIT" ,"yoga" ,"stength training", "zumba"]
 var exerciseCaloriesPerHalfHour = ["372", "300", "180", "374", "120", "90", "210"]
 
+const dialog = new
+ mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
+    
+dialog.show();
 
+dialog.listen('MDCDialog:accept', function() {
+  console.log('accepted');
+})
+
+dialog.listen('MDCDialog:cancel', function() {
+  console.log('canceled');
+})
 
 
 
@@ -137,8 +159,20 @@ $.ajax(settings).done(function (response) {
 		console.log(weeklyCalories)
 	})
 // End of the Healthy Recipes API code (lines 48-70)
+// ==================ALCOHOL API=====
+// let beverage = {gin};
+// var settings = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + beverage,
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+// 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
+	}
+}
 
-
+// *****************gonna work on this today**********
 // let beverage = {};
 // var settings = {
 // 	"async": true,
