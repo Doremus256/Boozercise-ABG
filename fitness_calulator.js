@@ -1,9 +1,15 @@
+// const dialog = new
+//  mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
+    
+// dialog.show();
 
+// dialog.listen('MDCDialog:accept', function() {
+//   console.log('accepted');
+// })
 
-var button = $('.button');
-var inputValue = $('.inputValue');
-
-
+// dialog.listen('MDCDialog:cancel', function() {
+//   console.log('canceled');
+// });
 
 $(document).on("click", "#submitButton", function(){
 
@@ -51,15 +57,15 @@ function getData(height, age, gender, weight) {
     $.ajax({
         url: "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth="+height+"&age="+age+"&gender="+gender+"&weigth="+weight,
         type: "GET", 
-        headers: {
+            headers: {
             "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
             "x-rapidapi-key": "72625e52a9msha06ed784ebb8fe6p1c3b8ejsnd07a4dfa968e"
         }})
         .then(function (apiResponse){
             console.log(apiResponse)
             $(".bmrResults").html(`
-            <h2>${apiResponse.data.BMR}</h2>
-            <h2>${apiResponse.data.goals.BMR["Weight loss"].calory}</h2>`)
+            <h2>Calories to maintain weight: ${apiResponse.data.BMR}</h2>`)
+            $(".Goals").html(`<h2>Calories to lose weight: ${apiResponse.data.goals.BMR["Weight loss"].calory}</h2>`)
             localStorage.setItem("bmiResults", JSON.stringify(apiResponse))
         })
 
@@ -71,7 +77,7 @@ var settings = {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-		"x-rapidapi-key": "72625e52a9msha06ed784ebb8fe6p1c3b8ejsnd07a4dfa968e"
+		"x-rapidapi-key": "72625e52a9msha06ed784ebb8fe6p1c3b8ejsnd07a4dfa968e",
 	}
 }
 $.ajax(settings).done(function (response) {
@@ -86,11 +92,26 @@ $.ajax(settings).done(function (response) {
 		event.preventDefault()
 		let weeklyCalories = $(".targetCalories").val()
 		console.log(weeklyCalories)
-	})
+	})}
 // End of the Healthy Recipes API code (lines 48-70)
 
 
-// let beverage = {};
+
+// ==================ALCOHOL API=====
+// let beverage = {gin};
+// var settings = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + beverage,
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+// 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"}}
+
+
+
+// *****************gonna work on this today**********
+// let beverage = {}
 // var settings = {
 // 	"async": true,
 // 	"crossDomain": true,
@@ -99,10 +120,9 @@ $.ajax(settings).done(function (response) {
 // 	"headers": {
 // 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
 // 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
-// 	}
+// 	}}
+
+// $.ajax(settings).done(function (response)) {
+//   console.log(response);
 // }
 
-// $.ajax(settings).done(function (response) {
-// 	console.log(response);
-
-}
