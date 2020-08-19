@@ -70,8 +70,8 @@ $.ajax(settings).done(function (response) {
 	})
 // End of the Healthy Recipes API code (lines 48-70)
 
-// ==================ALCOHOL API
-let beverage = {};
+// ==================ALCOHOL API=====
+let beverage = {gin};
 var settings = {
 	"async": true,
 	"crossDomain": true,

@@ -20,7 +20,7 @@ body{
     background-color: (146, 218, 236);
 }
 .space {
-    padding-top: 70px;
+    padding-top: 80px;
 }
 .demo-grid-ruler {
     padding-top: 30px;
@@ -37,6 +37,7 @@ body{
     text-align: center;
     color: whitesmoke;
     padding: 20px;
+    font-size: 20px;
     
 }
 .col2-5 {
