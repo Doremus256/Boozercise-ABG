@@ -3,10 +3,19 @@ body{
     font-size: 17px;
     line-height: 1.6;
 }
-.input {
-    padding-top: 100px;
+
+.foodCol {
+    float: right;
 }
 
+.input {
+    padding-top: 100px;
+    display: block;
+}
+
+.demo-grid-ruler {
+    display: flex;
+}
 .container {
     padding-top: 200px;
 }
@@ -20,11 +29,11 @@ body{
     padding: 200px;
     background-color: (146, 218, 236);
 }
-.space {
+
+.demo-grid-ruler-info {
     padding-top: 80px;
-}
-.demo-grid-ruler {
-    padding-top: 80px;
+    justify-content: center;
+    text-align: center;
 }
 
 .col3 {
@@ -46,7 +55,6 @@ body{
     text-align: center;
     border-radius: 5px;
     color: red;
-
 }
 
 #submitButton {
@@ -157,6 +165,7 @@ ul li a:hover {
 .intro {
     width: 100%;
     background-color: rgb(240, 215, 178);
+    position: block;
 }
 .subButton:hover, .subButton:focus{
     background-color: rgba(red, 0,0, .6);
