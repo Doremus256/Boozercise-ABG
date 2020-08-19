@@ -26,12 +26,6 @@ body{
     padding-top: 80px;
 }
 
-/* .col1{
-    background-color: #e04530;
-    text-align: center;
-    color: whitesmoke;
-    padding: auto;
-} */
 .col3 {
     background-color: #e04530;
     text-align: center;
@@ -53,35 +47,35 @@ body{
 
 }
 
-
 #submitButton {
     background-color: purple;
     color: white;
-    padding: 80px 20 px;
+    padding: auto;
     border-radius: 5px ;
     font-size: 1.5rem;
     font-weight: bold;
-    align: center
-    
+    justify-content: center;
+    text-align: center;
 }
+
 .button:hover {
     border: black;
 }
 
 p {
     text-align: center;
-    text color: #000;
+    color: #000;
     padding: 25px 25px;;
 
 }
 h2 {
     text-align: center;
-    text color: #000;
+    color: #000;
     padding: 25px 25px;;
 }
 h3 {
     text-align: center;
-    text color: #000;
+    color: #000;
 }
 ul {
    
@@ -101,6 +95,10 @@ li {
     list-style: none;
 }
 
+.center {
+    text-align: center;
+    margin-left: 30px;
+}
 
 button {
     width: 100px;
@@ -123,10 +121,6 @@ ul li a:hover {
     background: #0d7ad0;
 }
 
-    color: whitesmoke;
-    padding: 20px;
-    box-shadow: black;
-}
 .col5 {
     background-color: whitesmoke;
     text-align: center;
@@ -166,6 +160,10 @@ ul li a:hover {
     background-color: rgba(red, 0,0, .6);
     color: black;
     border: black;
-    border-width: 10px;
+    border-width: 10px;   
+}
+
+.mdc-top-app-bar {
+    position: fixed;
 }
 

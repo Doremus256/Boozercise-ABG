@@ -35,6 +35,8 @@ var timeFrame = document.querySelector('.timeFrame')
 
 
 
+
+
 // use may select drink choices
 var drinkChoices = ["beer 12 oz", "red wine 5oz", "white wine 5oz", "Spirits 1.5oz"];
 var drinkCaloriesPerServing = ["132", "123", "123", "100"]
@@ -51,12 +53,12 @@ var exerciseCaloriesPerHalfHour = ["372", "300", "180", "374", "120", "90", "210
 
 
 
-function getData(height, age, gender, weigth){
+function getData(height, age, gender, weight){
 
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth="+height+"&age="+age+"&gender="+gender+"&weigth="+weigth,
+        "url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth="+height+"&age="+age+"&gender="+gender+"&weigth="+weight,
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
@@ -69,11 +71,9 @@ function getData(height, age, gender, weigth){
     console.log(response.data);
     console.log(response.data.goals);
 
-    var fitnessTrackerURL = `"url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth="+height+"&age="+age+"&gender="+gender+"&weigth="+weigth,`
+    var fitnessTrackerURL = `"url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth="+height+"&age="+age+"&gender="+gender+"&weigth="+weigth`
 
-    /*    $.ajax({
-            url:fitnessTrackerURL
-            method: "GET"
+	    $.ajax({url:fitnessTrackerURL,method: "GET"
             .then(function (data){
 
             })
@@ -92,7 +92,7 @@ function getData(height, age, gender, weigth){
             $('ul').toggleClass('active')
         });
 
-   /* });
+ });
 };
 
 // JS code for Fitness Calculator API
@@ -108,6 +108,7 @@ var settings = {
 }
 $.ajax(settings).done(function (response) {
 	console.log(response);
+	$("")
 });
 
 
@@ -138,18 +139,18 @@ $.ajax(settings).done(function (response) {
 // End of the Healthy Recipes API code (lines 48-70)
 
 
-let beverage = {};
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + beverage,
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
-	}
-}
+// let beverage = {};
+// var settings = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + beverage,
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+// 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
+// 	}
+// }
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
+// $.ajax(settings).done(function (response) {
+// 	console.log(response);
+
