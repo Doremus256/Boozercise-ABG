@@ -22,6 +22,7 @@ body{
 
 .mdc-layout-grid {
     justify-content: center;
+    
 }
 
 .demo-grid-1 {
@@ -111,7 +112,7 @@ li {
 
 button {
     width: 100px;
-    height: 30px;
+    height: 40px;
     font-weight: bolder;
     background-color: blue;
     color: white;
@@ -175,6 +176,7 @@ ul li a:hover {
 
 .mdc-top-app-bar {
     position: fixed;
+    padding-top: 0px;
 }
 
 .mdc-dialog {
