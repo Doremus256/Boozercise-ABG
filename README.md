@@ -40,6 +40,14 @@ USING EXCERSISE CALORIE API (not found yet)
 Spit out a UNIT (hours) of excersise needed to make up for the additional calorie intake from alcohol consumption
 
 
+************ FORMULA*************
 
+day = 1
+days per week = 7 
+calories = 2000/day
+calories * week = 14000
+
+if the consume 1700 per day
+they can have about 1-2 servings of alcohol to keep or lose weight
 
 
