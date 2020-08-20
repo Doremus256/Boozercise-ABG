@@ -9,9 +9,9 @@ var targetCalories = $(`.inputValue`);
 // const dialog = new
 //  mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
 
-dialog.listen('MDCDialog:cancel', function() {
-  console.log('canceled');
-});
+// dialog.listen('MDCDialog:cancel', function() {
+//   console.log('canceled');
+// });
 
 $(document).on("click", "#submitButton", function(){
 // dialog.show();
@@ -54,7 +54,7 @@ var weigth = document.querySelector('.weight');
 var drinkChoices = ["beer 12 oz", "red wine 5oz", "Spirits 1.5oz"];
 var drinkCaloriesPerServing = ["132", "123", "100"];
 for (i=0; i<drinkChoices.length; i++){
-    $("#drinkSection").append(`<option value=${drinkCaloriesPerServing[i]}>${drinkChoices[i]}--${drinkCaloriesPerServing[i]}</option>`)
+    $("#drinkSection").append(`<option value=${drinkCaloriesPerServing[i]}>${drinkChoices[i]} -- ${drinkCaloriesPerServing[i]} cal</option>`)
 }
 
 for(i=1; i<=20; i++) {
@@ -113,6 +113,21 @@ $("#calorieBtn").on("click", function(event) {
             $(".targetCalories").html(htmlText)
         })
 });
+
+
+//drink button
+$("#drinkSubmitButton").on("click", function(event){
+    event.preventDefault();
+    var drinkType = $("#drinkSection").val();
+    var drinkAmt = $("#totalAlcoholCalories").val();
+
+    function calorieTotal(drinkType, drinkAmt){
+        return drinkType * drinkAmt
+    }
+    
+    console.log(calorieTotal(drinkType, drinkAmt));
+    
+})
 
 // ==================ALCOHOL API=====
 // let beverage = {gin};

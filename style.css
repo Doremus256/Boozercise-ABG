@@ -180,3 +180,8 @@ ul li a:hover {
 .mdc-dialog {
     position: fixed;
 }
+
+#navbar {
+    position: sticky;
+    top: 0;
+}
