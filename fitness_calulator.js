@@ -152,6 +152,10 @@ function outsideClick(e) {
   }
 }
 
+
+// ===================================================
+
+
 $( "bev" ).on( "click", function() {
     event.preventDefault();
    document.querySelector('.center');
