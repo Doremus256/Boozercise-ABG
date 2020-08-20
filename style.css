@@ -89,23 +89,7 @@ h3 {
     text-align: center;
     color: #000;
 }
-ul {
-    margin: 0px;
-    padding: 0px;
-    width: 10%;
-    background-color: lightslategrey;
-    transform-origin: top;
-    transform: perspective(1000px) rotateX(-90deg);
-    transition: 0.5s;
-}
 
-ul.active{
-    transform: perspective(1000px) rotateX(0deg);
-}
-
-li {
-    list-style: none;
-}
 
 .center {
     text-align: center;
@@ -119,18 +103,6 @@ button {
     background-color: blue;
     color: white;
     cursor: pointer; 
-}
-
-ul li a {
-    display: block;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    border-bottom: 1px solid(0,0,0,.2);
-}
-ul li a:hover {
-    background: #0d7ad0;
 }
 
 .col5 {
@@ -207,6 +179,13 @@ ul li a:hover {
   .modal {
     display: none;
     position: fixed;
+}
+
+#navbar {
+    position: sticky;
+    top: 0;
+}
+.modal {
     z-index: 1;
     left: 0;
     top: 0;
@@ -278,3 +257,4 @@ ul li a:hover {
     width: 30%;
     height: 30%;
 }
+
