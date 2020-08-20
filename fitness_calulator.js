@@ -3,10 +3,8 @@ let strDrinks = '';
 
 var button = $('.button');
 var inputValue = $('.inputValue');
-var targetCalories = $(`.inputValue`)
+var targetCalories = $(`.inputValue`);
 
-
-    
 $(document).on("click", "#submitButton", function () {
     var height = $('#height').val();
     var age = $('.age').val();
@@ -25,12 +23,12 @@ $(document).on("click", "#submitButton", function () {
 
 // created variables for user to enter data to calculate daily calorie requirements
 
-var button = document.querySelector('.button')
-var inputValue = document.querySelector('.inputValue')
-var height = document.querySelector('.height')
-var age = document.querySelector('.age')
-var gender = document.querySelector('.gender')
-var weigth = document.querySelector('.weight')
+var button = document.querySelector('.button');
+var inputValue = document.querySelector('.inputValue');
+var height = document.querySelector('.height');
+var age = document.querySelector('.age');
+var gender = document.querySelector('.gender');
+var weigth = document.querySelector('.weight');
 
 // use may select drink choices
 var drinkChoices = ["beer 12 oz", "red wine 5oz", "Spirits 1.5oz"];
@@ -38,7 +36,7 @@ var drinkCaloriesPerServing = ["132", "123", "100"];
 
 
 for (i=0; i<drinkChoices.length; i++){
-    $("#drinkSection").append(`<option value=${drinkCaloriesPerServing[i]}>${drinkChoices[i]}--${drinkCaloriesPerServing[i]}</option>`)
+    $("#drinkSection").append(`<option value=${drinkCaloriesPerServing[i]}>${drinkChoices[i]} -- ${drinkCaloriesPerServing[i]} cal</option>`)
 }
 
 for(i=1; i<=20; i++) {
@@ -51,7 +49,9 @@ for(i=1; i<=20; i++) {
 // number of drinks entered is multiplied by the appropiate calorie value
 
 
+
 var exerciseChoices = ["running", "swimmimg", "walking", "HIIT" ,"yoga" ,"stength training", "zumba"];
+
 var exerciseCaloriesPerHalfHour = ["372", "300", "180", "374", "120", "90", "210"];
 
 function getData(height, age, gender, weight) {
@@ -138,6 +138,21 @@ $("#calorieBtn").on("click", function(event) {
             $(".targetCalories").html(htmlText)
         })
 });
+
+
+//drink button and alcohol calorie calc
+$("#drinkSubmitButton").on("click", function(event){
+    event.preventDefault();
+    var drinkType = $("#drinkSection").val();
+    var drinkAmt = $("#totalAlcoholCalories").val();
+
+    function calorieTotal(drinkType, drinkAmt){
+        return drinkType * drinkAmt
+    }
+    
+    console.log(calorieTotal(drinkType, drinkAmt));
+    
+})
 
 // ==================ALCOHOL API=====
 // let beverage = {gin};
