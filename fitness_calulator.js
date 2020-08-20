@@ -115,7 +115,7 @@ $("#calorieBtn").on("click", function(event) {
 });
 
 
-//drink button
+//drink button and alcohol calorie calc
 $("#drinkSubmitButton").on("click", function(event){
     event.preventDefault();
     var drinkType = $("#drinkSection").val();
