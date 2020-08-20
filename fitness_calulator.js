@@ -109,8 +109,8 @@ $(document).on("click", "#bevBtn", function(){
     $('#drinks').empty();
 });
 
-        })
-}
+    //    })
+//}
 
 // Brad adding JQ for Healthy Recipes API: (lines 48-70)
 $("#calorieBtn").on("click", function(event) {
