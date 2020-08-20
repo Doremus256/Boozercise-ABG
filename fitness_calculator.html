@@ -72,23 +72,27 @@
         <br>
         <div class="Goals"></div>      
       </div>
-      
-      <!-- modal --> 
-      <div class="Dropdown">
-          <button>Drink Selection</button>
-
+    
       <!-- container with 3 columns for Alcohol, Excersice and Food -->
-      <div class="demo-grid-ruler mdl-grid mdl-cell--12-col">
-        <div class="mdl-cell mdl-cell--4-col"><div class="Dropdown">
-          <button>Dropdown</button>
-
-          <ul>
-            <li><a href="#">beer 12 oz</a></li>
-            <li><a href="#">Red wine 5oz</a></li>
-            <li><a href="#">Spirits 1.5oz</a></li>
-          </ul>
-          
-        </div></div>
+  <div class="demo-grid-ruler mdl-grid mdl-cell--12-col">
+    <div class="mdl-cell mdl-cell--4-col">
+    <button id="modal-btn" class="button bev">Random Drink</button>
+    <section>
+      <div id="my-modal" class="modal">
+       <div class="modal-content">
+          <div class="modal-header center1">
+            <span class="close">&times;</span>
+            <h2 class="randomResult"></h2>
+           </div>
+           <div class="modal-body">
+          <p id="drink-section"></p>
+          </div>
+          <div class="modal-footer">
+            <h3>Drink UP</h3>
+        </div>
+      </div>
+    </div>
+      </div>    
         <div class="mdl-cell mdl-cell--4-col">Exercise</div>
         <div class="mdl-cell mdl-cell--4-col">
           <div class="mdl-cell mdl-cell--3-col"><input type="text" class="inputValue" placeholder="Enter Weekly Calorie Target">
@@ -99,9 +103,9 @@
             <div class="timeFrame">Time Frame</div>
         </div>
       </div>
+    </section>
       <!-- <div class="mdc-data-table">  -->
         
-    <script src="https://unpkg.com/@material/dialog@0.39.0/dist/mdc.dialog.js"></script>
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> 
     <script src="fitness_calulator.js"></script>

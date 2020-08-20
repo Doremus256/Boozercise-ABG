@@ -1,25 +1,11 @@
+let drinks = '';
+let strDrinks = '';
 
 // var button = $('.button');
 // var inputValue = $('.inputValue');
 
-const dialog = new
- mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
-
-// const dialog = new
-//  mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
-
-// dialog.show();
-
-// dialog.listen('MDCDialog:accept', function() {
-//   console.log('accepted');
-// })
-
-// dialog.listen('MDCDialog:cancel', function() {
-//   console.log('canceled');
-// });
-
 $(document).on("click", "#submitButton", function(){
-
+    
     var height = $('#height').val();
     var age = $('.age').val();
     var gender = $('.gender').val();
@@ -50,15 +36,15 @@ var timeFrame = document.querySelector('.timeFrame')
 
 // use may select drink choices
 var drinkChoices = ["beer 12 oz", "red wine 5oz", "Spirits 1.5oz"];
-var drinkCaloriesPerServing = ["132", "123", "100"]
+var drinkCaloriesPerServing = ["132", "123", "100"];
 
 // user enters number of drinks consumed per week according to choices
 //var drinksPerWeek = prompt("how many drinks to you consume in a week")
 
 // number of drinks entered is multiplied by the appropiate calorie value
 
-var exerciseChoices = ["running", "swimmimg", "walking", "HIIT" ,"yoga" ,"stength training", "zumba"]
-var exerciseCaloriesPerHalfHour = ["372", "300", "180", "374", "120", "90", "210"]
+var exerciseChoices = ["running", "swimmimg", "walking", "HIIT" ,"yoga" ,"stength training", "zumba"];
+var exerciseCaloriesPerHalfHour = ["372", "300", "180", "374", "120", "90", "210"];
 
 function getData(height, age, gender, weight) {
     $.ajax({
@@ -74,7 +60,7 @@ function getData(height, age, gender, weight) {
             <h2>Calories to maintain weight: ${apiResponse.data.BMR}</h2>`)
             $(".Goals").html(`<h2>Calories to lose weight: ${apiResponse.data.goals.BMR["Weight loss"].calory}</h2>`)
             localStorage.setItem("bmiResults", JSON.stringify(apiResponse))
-        })
+        });
 
 // Brad adding JQ for Healthy Recipes API: (lines 48-70)
 var settings = {
@@ -86,7 +72,7 @@ var settings = {
 		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
 		"x-rapidapi-key": "72625e52a9msha06ed784ebb8fe6p1c3b8ejsnd07a4dfa968e",
 	}
-}
+};
 $.ajax(settings).done(function (response) {
 	console.log(response);
 		$("targetCalories").append(`<div class=card>
@@ -99,42 +85,83 @@ $.ajax(settings).done(function (response) {
 		event.preventDefault()
 		let weeklyCalories = $(".targetCalories").val()
 		console.log(weeklyCalories)
-	})}
+	})};
 // End of the Healthy Recipes API code (lines 48-70)
 
+$(document).on("click", "#bevBtn", function(){
+    var drinkUp = $('.drinkUp').val();
+    
 
+    console.log(drinkUp);
 
-// ==================ALCOHOL API=====
-// let beverage = {gin};
-// var settings = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + beverage,
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+    getData(drinks,);
 
-// 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
-	
+    $('#drinks').empty();
+});
 
-// 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"}}
+// Get DOM Elements
+const modal = document.querySelector('#my-modal');
+const modalBtn = document.querySelector('#modal-btn');
+const closeBtn = document.querySelector('.close');
 
+// Events
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
 
+// Open
+function openModal() {
+  modal.style.display = 'block';
+}
 
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
 
-// *****************gonna work on this today**********
-// let beverage = {}
-// var settings = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + beverage,
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-// 		"x-rapidapi-key": "273b750f66mshba92fa4a6450d78p125595jsndb8ee286de43"
-// 	}}
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
 
-// $.ajax(settings).done(function (response)) {
-//   console.log(response);
-// }
+$( "bev" ).on( "click", function() {
+    event.preventDefault();
+   document.querySelector('.center');
+   html = event.tabItem.attr("label")
+  });
+  function getRandomCocktail(){
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    .then(
+      function(response) {
+        if (response.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+          return;
+        }
+  
+        // Examine the text in the response
+        response.json().then(function(data) {
+          console.log(data);
+          displayRandomCocktail(data);
+        });
+      }
+    )
+    .catch(function(err) {
+      console.log('Fetch Error :-S', err);
+    });
+  }
+  getRandomCocktail();
 
+  function displayRandomCocktail(cocktail){
+      console.log(cocktail.drinks[0]);
+
+      let drinkSection = document.querySelector('#drink-section');
+      let drinkName = document.createElement('h2');
+      drinkName.innerHTML = cocktail.drinks[0].strDrink;
+      drinkSection.appendChild(drinkName);
+      let img = document.createElement('img');
+      img.src = cocktail.drinks[0].strDrinkThumb;
+      drinkSection.appendChild(img);
+  }
