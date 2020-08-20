@@ -5,10 +5,6 @@ body{
     line-height: 1.6;
 }
 
-.foodCol {
-    float: right;
-}
-
 .input {
     padding-top: 100px;
     display: block;
@@ -16,7 +12,9 @@ body{
 
 .demo-grid-ruler {
     display: flex;
+    border-style: thin;
 }
+
 .container {
     padding-top: 200px;
 }
@@ -89,7 +87,6 @@ h3 {
     color: #000;
 }
 ul {
-   
     margin: 0px;
     padding: 0px;
     width: 10%;
@@ -98,11 +95,12 @@ ul {
     transform: perspective(1000px) rotateX(-90deg);
     transition: 0.5s;
 }
+
 ul.active{
     transform: perspective(1000px) rotateX(0deg);
 }
+
 li {
-    
     list-style: none;
 }
 
