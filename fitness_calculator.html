@@ -47,11 +47,14 @@
       </section>
         </div>
       </header>
+
       <br><br><br><br>
       <!-- <h2 class="intro space">Are you Exercising Enough To Offset Your Alcohol Consumption? </h2> -->
       <h3>Are you interested in drinking and losing weight?</h3>
+      <hr>
       <h2>Try Boozercize To find out</h2>
-      <p>Enter your height, age, gender, and weight to calculate your daily calory requirements. Then select your favorite drink type and enter the number of drinks you consume per week. This will allow the program to calculate how many hours of exercise you must do to offset this consumption.!</p>
+      <hr>
+      <p class="howToUse">Enter your height, age, gender, and weight to calculate your daily calory requirements. Then select your favorite drink type and enter the number of drinks you consume per week. This will allow the program to calculate how many hours of exercise you must do to offset this consumption.!</p>
       <!-- user enters personal values -->
       <div class="demo-grid-ruler mdl-grid mdl-cell--12-col">
         <div class="mdl-cell mdl-cell--3-col"><input type="text" id="height" placeholder="Enter your height in cm">
@@ -95,22 +98,49 @@
       </div>    
         <div class="mdl-cell mdl-cell--4-col">Exercise</div>
         <div class="mdl-cell mdl-cell--4-col">
-          <div class="mdl-cell mdl-cell--3-col"><input type="text" class="inputValue" placeholder="Enter Weekly Calorie Target">
-            <input type="submit" value="submit" class="calorieBtn"></div>
-            <div class="mdl-cell mdl-cell--3-col"><input type="text" class="inputValue" placeholder="Enter Time Frame">
-            <input type="submit" value="submit" class="timeFrameBtn"></div>
+          <div class="mdl-cell mdl-cell--3-col">
+            <input type="text" class="inputValue" id="userCalorieField" placeholder="Enter Weekly Calorie Target">
+            <input type="submit" value="Get Recipes!" id="calorieBtn"></div>
+
             <div class="targetCalories">Target Calories</div>
-            <div class="timeFrame">Time Frame</div>
+
         </div>
       </div>
     </section>
       <!-- <div class="mdc-data-table">  -->
         
+        <div class="mdc-layout-grid">
+
+          <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell">
+                <select id="drinkSection"></select>
+                <br>
+                <select id="totalAlcoholCalories"></select>
+
+              </div>
+              <div class="mdc-layout-grid__cell">First level</div>
+              <div class="mdc-layout-grid__cell">
+                <h5>Shows Recipes Based On Calories</h5>
+                <input type="text" class="inputValue" id="userCalorieField" placeholder="Enter Weekly Calorie Target">
+                <input type="submit" value="Get Recipes!" id="calorieBtn"></div>
+    
+                <div class="targetCalories">Target Calories</div>
+    
+              </div>
+            </div>
+          </div>
+          
+
+
+
+      
+    <script src="https://unpkg.com/@material/dialog@0.39.0/dist/mdc.dialog.js"></script>
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> 
     <script src="fitness_calulator.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <!-- <script src="material.js"></script> -->
   </body>
   </html>
