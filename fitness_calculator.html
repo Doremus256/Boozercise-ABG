@@ -1,25 +1,16 @@
-<!-- Combine JS and HTML -->
-
-<!-- Comment places where code is needed -->
-
 <!DOCTYPE html>
 <html class = "no-js" lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">	
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">    
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="jquery-3.5.1.min.js"></script>
-    <script src="fitness_calulator.js"></script>
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.5.1.min.js"></script>
     <title>Boozercise ABG!</title>
 
 </head>
@@ -44,7 +35,6 @@
     </aside>
 
     <header class="mdc-top-app-bar">
-      <!-- BD removed nav bar icon buttons and kept fav heart  -->
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <span class="mdc-top-app-bar__title">BOOZERCIZE</span>
@@ -53,10 +43,12 @@
       </section>
         </div>
       </header>
-  
-      <h2 class="intro space">Are you Exercising Enough To Offset Your Alcohol Consumption? </h2>
-      <h3>Try Boozercize To find out</h3>
-      <p>Enter your height, age, gender, and weight to calculate your daily calory requirements. Then select your favorite drink type and enter the number of drinks you consume per week. This will allow the program to calculate how many hours of exercise you must do to offset this consumption.!</p>
+
+      <br><br><br><br>
+      <!-- <h2 class="intro space">Are you Exercising Enough To Offset Your Alcohol Consumption? </h2> -->
+      <h3>Are you interested in drinking and losing weight?</h3>
+      <h2>Try Boozercize To find out</h2>
+      <p class="howToUse">Enter your height, age, gender, and weight to calculate your daily calory requirements. Then select your favorite drink type and enter the number of drinks you consume per week. This will allow the program to calculate how many hours of exercise you must do to offset this consumption.!</p>
       <!-- user enters personal values -->
       <div class="demo-grid-ruler mdl-grid mdl-cell--12-col">
         <div class="mdl-cell mdl-cell--3-col"><input type="text" id="height" placeholder="Enter your height in cm">
@@ -72,7 +64,8 @@
           <span class="mdc-button__label">Submit</span>
         </button>  
         
-        <div class="bmrResults"></div> 
+        <div class="bmrResults"></div>
+
         <br>
         <div class="Goals"></div>      
       </div>
@@ -80,91 +73,64 @@
       <!-- modal --> 
       <div class="Dropdown">
           <button>Drink Selection</button>
+
+      <!-- container with 3 columns for Alcohol, Excersice and Food -->
+      <div class="demo-grid-ruler mdl-grid mdl-cell--12-col">
+        <div class="mdl-cell mdl-cell--4-col"><div class="Dropdown">
+          <button>Dropdown</button>
+
           <ul>
             <li><a href="#">beer 12 oz</a></li>
             <li><a href="#">Red wine 5oz</a></li>
             <li><a href="#">Spirits 1.5oz</a></li>
           </ul>
+
+          
+          
+        </div></div>
+        <div class="mdl-cell mdl-cell--4-col">Exercise</div>
+        <div class="mdl-cell mdl-cell--4-col">
+          <div class="mdl-cell mdl-cell--3-col">
+            <input type="text" class="inputValue" id="userCalorieField" placeholder="Enter Weekly Calorie Target">
+            <input type="submit" value="Get Recipes!" id="calorieBtn"></div>
+
+            <div class="targetCalories">Target Calories</div>
+
         </div>
-        
-        <div class="mdc-dialog">
-          <div class="mdc-dialog__container">
-            <div class="mdc-dialog__surface"
-            role="alertdialog"
-            aria-modal="true"
-            aria-labelledby="my-dialog-title"
-                aria-describedby="my-dialog-content"> -->
-                Title cannot contain leading whitespace due to mdc-typography-baseline-top()
-                <h2 class="mdc-dialog__title" id="my-dialog-title">
-                  Choose Your Beverage
-                </h2>
-                <div class="mdc-dialog__content" id="my-dialog-content">
-                  <ul class="mdc-list mdc-list--avatar-list">
-                    <li class="mdc-list-item" tabindex="0" data-mdc-dialog-action="none">
-                      <span class="mdc-list-item__text">None</span>
-                    </li>
-                    <li class="mdc-list-item" data-mdc-dialog-action="callisto">
-                      <span class="mdc-list-item__text">Callisto</span>
-                    </li>
-                  </ul>
-                </div>
+      </div>
+      <!-- <div class="mdc-data-table">  -->
+        <div class="mdc-layout-grid">
+
+          <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell">
+                <select id="drinkSection"></select>
+                <br>
+                <select id="totalAlcoholCalories"></select>
+
+              </div>
+              <div class="mdc-layout-grid__cell">First level</div>
+              <div class="mdc-layout-grid__cell">
+                <h5>Shows Recipes Based On Calories</h5>
+                <input type="text" class="inputValue" id="userCalorieField" placeholder="Enter Weekly Calorie Target">
+                <input type="submit" value="Get Recipes!" id="calorieBtn"></div>
+    
+                <div class="targetCalories">Target Calories</div>
+    
               </div>
             </div>
-           </div>
-          
-         <div class="mdc-dialog__scrim"></div>
-         
-          
-          <div class="mdc-menu mdc-menu-surface">
-            <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
-              <li class="mdc-list-item" role="menuitem">
-                <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__text">A Menu Item</span>
-              </li>
-              <li class="mdc-list-item" role="menuitem">
-                <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__text">Another Menu Item</span>
-              </li>
-            </ul>
           </div>
           
-      <!-- modal ends -->
-      
-      <div class="demo-grid-ruler mdl-grid">
-        <div class="mdl-cell mdl-cell--4-col col3">Alcohol</div>
-        <div class="mdl-cell mdl-cell--4-col col3">Exercise</div>
-        <div class="mdl-cell mdl-cell--4-col col3">Food</div>
-      </div> 
-      
-    
-    <div class="demo-grid-ruler mdl-grid">
-      <div class="mdl-cell mdl-cell--4-col col4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus exercitationem impedit quas iure, hic inventore assumenda reprehenderit nobis alias, voluptatem qui cum ut eos! Ut quidem commodi blanditiis laboriosam! Pariatur!</div>
-    </div>
-    
-    <!-- Brad added these submit forms to be used with the Healthy Recipes API (lines 74-80) -->
-    
 
-      <div class="mdl-cell mdl-cell--3-col"><input type="text" class="inputValue" placeholder="Enter Weekly Calorie Target">
-      <input type="submit" value="submit" class="calorieBtn"></div>
-      <div class="mdl-cell mdl-cell--3-col"><input type="text" class="inputValue" placeholder="Enter Time Frame">
-      <input type="submit" value="submit" class="timeFrameBtn"></div>
-      
-      <div class="targetCalories">Target Calories</div>
-      <div class="timeFrame">Time Frame</div>
 
-      <!-- End of HTML for Healthy Recipes API (starts on lines 74-80) -->
+
       
-      <!-- <div class="mdc-data-table">  -->
-        
-        <script src="https://unpkg.com/@material/dialog@0.39.0/dist/mdc.dialog.js"/>
-    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="https://unpkg.com/@material/dialog@0.39.0/dist/mdc.dialog.js"></script>
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> 
     <script src="fitness_calulator.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    
-    
-    
   </body>
   </html>
