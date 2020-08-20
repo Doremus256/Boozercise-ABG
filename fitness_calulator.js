@@ -133,8 +133,6 @@ $("#calorieBtn").on("click", function(event) {
         })
 });
 
-    getData(drinks,);
-
     $('#drinks').empty();
 
 // Brad adding JQ for Healthy Recipes API: (lines 48-70)
