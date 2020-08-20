@@ -5,6 +5,15 @@ var button = $('.button');
 var inputValue = $('.inputValue');
 var targetCalories = $(`.inputValue`);
 
+// function myFunction() {
+//     var x = document.getElementById("hide");
+//     if (x.style.display == "none") {
+//       x.style.display = "block";
+//     } else {
+//       x.style.display = "none";
+//     }
+//   }
+
 $(document).on("click", "#submitButton", function () {
     var height = $('#height').val();
     var age = $('.age').val();
@@ -47,9 +56,13 @@ for(i=1; i<=20; i++) {
 
 // number of drinks entered is multiplied by the appropiate calorie value
 
-var exerciseChoices = ["running", "swimmimg", "walking", "HIIT" ,"yoga" ,"stength training", "zumba"];
+var exerciseChoices = ["running", "swimmimg", "walking", "HIIT" ,"yoga" ,"strength training", "zumba"];
 
 var exerciseCaloriesPerHalfHour = ["372", "300", "180", "374", "120", "90", "210"];
+
+for (let i = 0; i < exerciseChoices.length; i++) {
+    $("#exerciseSelections").append(`<option value=${exerciseCaloriesPerHalfHour[i]}> ${exerciseChoices[i]} -- ${exerciseCaloriesPerHalfHour[i]} Cal</option>`)
+    }
 
 function getData(height, age, gender, weight) {
     $.ajax({
@@ -68,7 +81,7 @@ function getData(height, age, gender, weight) {
             localStorage.setItem("bmiResults", JSON.stringify(apiResponse))
         });
 
-// Brad adding JQ for Healthy Recipes API: (lines 48-70)
+
 var settings = {
 	"async": true,
 	"crossDomain": true,
@@ -101,7 +114,7 @@ $(document).on("click", "#bevBtn", function(){
     console.log(drinkUp);
 
 
-    getData(drinks,);
+  
 
     $('#drinks').empty();
 });
@@ -110,6 +123,7 @@ $(document).on("click", "#bevBtn", function(){
 $("#calorieBtn").on("click", function(event) {
 
     event.preventDefault()
+    
     var userCalories = $("#userCalorieField").val()
     console.log("Calorie",userCalories)
     $.ajax({
@@ -133,7 +147,7 @@ $("#calorieBtn").on("click", function(event) {
         })
 });
 
-    getData(drinks,);
+   
 
     $('#drinks').empty();
 
@@ -170,14 +184,17 @@ $("#drinkSubmitButton").on("click", function(event){
     event.preventDefault();
     var drinkType = $("#drinkSection").val();
     var drinkAmt = $("#totalAlcoholCalories").val();
-
+    var alcTotal = drinkType * drinkAmt
     function calorieTotal(drinkType, drinkAmt){
         return drinkType * drinkAmt
+        
     }
     
     console.log(calorieTotal(drinkType, drinkAmt));
-    
-})
+    $(".alcoholTotal").html(`
+    <h4>Total Alcohol Calories: ${alcTotal} </h4>`)
+    localStorage.setItem(".alcoholTotal", JSON.stringify(calorieTotal))
+});
 
 
 const modal = document.querySelector('#my-modal');
