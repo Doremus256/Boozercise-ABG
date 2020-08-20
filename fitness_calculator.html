@@ -84,6 +84,8 @@
             <li><a href="#">Red wine 5oz</a></li>
             <li><a href="#">Spirits 1.5oz</a></li>
           </ul>
+
+          
           
         </div></div>
         <div class="mdl-cell mdl-cell--4-col">Exercise</div>
@@ -97,7 +99,32 @@
         </div>
       </div>
       <!-- <div class="mdc-data-table">  -->
-        
+        <div class="mdc-layout-grid">
+
+          <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell">
+                <select id="drinkSection"></select>
+                <br>
+                <select id="totalAlcoholCalories"></select>
+
+              </div>
+              <div class="mdc-layout-grid__cell">First level</div>
+              <div class="mdc-layout-grid__cell">
+                <h5>Shows Recipes Based On Calories</h5>
+                <input type="text" class="inputValue" id="userCalorieField" placeholder="Enter Weekly Calorie Target">
+                <input type="submit" value="Get Recipes!" id="calorieBtn"></div>
+    
+                <div class="targetCalories">Target Calories</div>
+    
+              </div>
+            </div>
+          </div>
+          
+
+
+
+      
     <script src="https://unpkg.com/@material/dialog@0.39.0/dist/mdc.dialog.js"></script>
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> 

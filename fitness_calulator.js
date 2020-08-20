@@ -48,6 +48,13 @@ var weigth = document.querySelector('.weight')
 // use may select drink choices
 var drinkChoices = ["beer 12 oz", "red wine 5oz", "Spirits 1.5oz"];
 var drinkCaloriesPerServing = ["132", "123", "100"];
+for (i=0; i<drinkChoices.length; i++){
+    $("#drinkSection").append(`<option value=${drinkCaloriesPerServing[i]}>${drinkChoices[i]}--${drinkCaloriesPerServing[i]}</option>`)
+}
+
+for(i=1; i<=20; i++) {
+    $("#totalAlcoholCalories").append(`<option value=${i}>${i}</option>`)
+}
 
 // user enters number of drinks consumed per week according to choices
 //var drinksPerWeek = prompt("how many drinks to you consume in a week")
