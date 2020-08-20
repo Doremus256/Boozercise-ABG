@@ -2,8 +2,8 @@
 // var button = $('.button');
 // var inputValue = $('.inputValue');
 
-const dialog = new
- mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
+//const dialog = new
+/* mdc.dialog.MDCDialog(document.querySelector('#my-mdc-dialog'));
     
 dialog.show();
 
@@ -14,7 +14,7 @@ dialog.listen('MDCDialog:accept', function() {
 dialog.listen('MDCDialog:cancel', function() {
   console.log('canceled');
 });
-
+*/
 $(document).on("click", "#submitButton", function(){
 
     var height = $('#height').val();
