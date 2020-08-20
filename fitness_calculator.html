@@ -44,7 +44,14 @@
           <span class="mdc-top-app-bar__title">BOOZERCIZE</span>
           <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
         </section>
-      </div>
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
+      </section>
+        </div>
+      </header>
+
+   
+      <!-- <h2 class="intro space">Are you Exercising Enough To Offset Your Alcohol Consumption? </h2> -->
+
     </header>
 
     <h3>Are you Exercising Enough To Offset Your Alcohol Consumption?</h3>
@@ -66,17 +73,21 @@
       <div class="mdl-cell mdl-cell--3-col">
         <input type="text" class="weight" placeholder="Enter your weight in kg">
       </div>
+
         
       <button class="mdc-button--raised" id="submitButton">
         <span class="mdc-button__label">Submit</span>
       </button>  
         
 
+      <div>
         <div class="bmrResults"></div> 
         <br>
         <div class="Goals"></div>      
       </div>
     
+    <!-- <div class="mdl-cell mdl-cell--4-col"> -->
+  
 
       <!-- container with 3 columns for Alcohol, Excersice and Food -->
 
@@ -118,7 +129,6 @@
 
     </section>
       <!-- <div class="mdc-data-table">  -->
-
         
         <div class="mdc-layout-grid">
 
@@ -136,14 +146,32 @@
                 <span class="mdc-button__label">Submit</span>
               </button> 
             </div>
-            <div class="mdc-layout-grid__cell">First level</div>
             <div class="mdc-layout-grid__cell">
               <h5>Shows Recipes Based On Calories</h5>
               <input type="text" class="inputValue" id="userCalorieField" placeholder="Enter Weekly Calorie Target">
               <input type="submit" value="Get Recipes!" id="calorieBtn">
             </div>
+            <div class="mdc-layout-grid__cell">
+              <button id="modal-btn" class="button bev">Random Drink</button>
+              <section>
+                <div id="my-modal" class="modal">
+                 <div class="modal-content">
+                    <div class="modal-header center1">
+                      <span class="close">&times;</span>
+                      <h2 class="randomResult"></h2>
+                     </div>
+                     <div class="modal-body">
+                    <p id="drink-section"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <h3>Drink UP</h3>
+                  </div>
+                </div>
+              </div>
+                </div>  
+            </div>
     
-            <div class="targetCalories">Target Calories</div>
+
     
           </div>
         </div>
@@ -153,13 +181,12 @@
 
 
       
-    <script src="https://unpkg.com/@material/dialog@0.39.0/dist/mdc.dialog.js"></script>
-
+    <!-- <script src="https://unpkg.com/@material/dialog@0.39.0/dist/mdc.dialog.js"></script> -->
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> 
     <script src="fitness_calulator.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <!-- <script src="material.js"></script> -->
   </body>
   </html>
