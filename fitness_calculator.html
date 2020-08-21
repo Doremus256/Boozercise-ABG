@@ -4,48 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">	
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">    
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="jquery-3.5.1.min.js"></script>
     <title>Boozercise ABG!</title>
   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-	  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+
     <link rel="stylesheet" href="style.css">
 
 </head>
   
   <body>
-    <!-- <aside id="my-mdc-dialog" class="mdc-dialog__container container" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">
-      <div class="mdc-dialog__surface">
-        <header class="mdc-dialog__header">
-          <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
-            Are you 21 and over?
-          </h2>
-        </header>
-        <section id="my-mdc-dialog-description" class="mdc-dialog__body">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid animi amet minima est rem ipsam fugit exercitationem temporibus vero. Reiciendis consectetur hic alias dolores cupiditate error! Cum totam quo similique.
-        </section>
-        <footer class="mdc-dialog__footer">
-          <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Decline</button>
-          <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Accept</button>
-        </footer>
-      </div>
-      <div class="mdc-dialog__backdrop"></div>
-    </aside> -->
+    
 
     <header class="mdc-top-app-bar" id="navbar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <span class="mdc-top-app-bar__title">BOOZERCIZE</span>
+          <span class="mdc-top-app-bar__title">BOOZERCIZE ABG</span>
           <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
-        </section>
-        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
-      </section>
+        
         </div>
       </header>
 
@@ -59,82 +38,31 @@
     <p class="howToUse">Enter your height, age, gender, and weight to calculate your daily calory requirements. Then select your favorite drink type and enter the number of drinks you consume per week. This will allow the program to calculate the additional calories consumed from alcohol. With this infomation you can load the total calories you need to maintain or lose into the "get recipes" input box to obtain healthy recipes. There is also a list of exercise types that include an approximation of how many calories you will burn per half hour!</p>
     
     <h3>LIT's have some fun!</h3>
-    <!-- user enters personal values -->
-
-
-    <!-- <div class="demo-grid-ruler mdc-layout-grid mdl-cell--12-col">
-      <div class="mdl-cell mdl-cell--1-col">
-        <input type="text" id="height" placeholder="Enter your height in cm">
-        <input type="text" class="age" placeholder="Enter your age">
-        <input type="text" class="gender" placeholder="Enter your gender">
-        <input type="text" class="weight" placeholder="Enter your weight in kg">
-        <button class="mdc-button--raised" id="submitButton">
-          <span class="mdc-button__label">Submit</span>
-        </button>  
-        <div class="mdl-cell mdl-cell--1-col cool1">
-            <div class="mdl-cell mdl-cell--4-col bmrResults" ></div> 
-            <br>
-            <div class="mdl-cell mdl-cell--4-col Goals" ></div>
-        </div>
-      </div>
-    </div> -->
-
-
-    <div class="mdc-layout-grid--span-12">
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell mdl-cell--1-col">
+    
+      <div class="row">
+        <div class="column">
           <input type="text" id="height" placeholder="Enter your height inches">
           <input type="text" class="age" placeholder="Enter your age">
-          <input type="text" class="gender" placeholder="Enter your gender">
+          <select class="gender" >
+          <option value="Male" placeholder = "enter Your gender"> Male</option>      
+          <option value="Female" placeholder = "enter Your gender">   Female  </option>
+          </select>
           <input type="text" class="weight" placeholder="Enter your weight lb">
           <button class="mdc-button--raised" id="submitButton">
             <span class="mdc-button__label">Submit</span>
-          </button>  
+          </button>
         </div>
-        <div class="mdc-layout-grid__cell">
-        <div class=" mdl-cell--2-col bmrResults" ></div> 
+        <div class=" resultBMR">
+        <div class="bmrResults"></div> 
         <br>
-        <div class="mdl-cell--2-col Goals" ></div></div>
-        
+        <div class=" Goals" ></div>
+        </div>
       </div>
-    </div>
-    <!-- <div class="demo-grid-ruler mdl-grid mdl-cell--12-col">
-      <div class="mdl-cell mdl-cell--3-col">
-        <input type="text" id="height" placeholder="Enter your height in cm">
-      </div>
-      <div class="mdl-cell mdl-cell--3-col">
-        <input type="text" class="age" placeholder="Enter your age">
-      </div> 
-      <div class="mdl-cell mdl-cell--3-col">
-        <input type="text" class="gender" placeholder="Enter your gender">
-      </div> 
-      <div class="mdl-cell mdl-cell--3-col">
-        <input type="text" class="weight" placeholder="Enter your weight in kg">
-      </div>
+    <hr>
+    </section>    
 
-        
-      <button class="mdc-button--raised" id="submitButton">
-        <span class="mdc-button__label">Submit</span>
-      </button>  
-        
-      <div id="hide">
-        <div class="bmrResults" ></div> 
-        <br>
-        <div class="Goals" ></div>      
-      </div>
-     -->
-    <!-- <div class="mdl-cell mdl-cell--4-col"> -->
-  
-
-
-    </section>
-      <!-- <div class="mdc-data-table">  -->
-        
         <div class="mdc-layout-grid">
 
-
-      <!-- <div class="mdc-data-table">  -->
-      <div class="mdc-layout-grid">
 
         <div class="mdc-layout-grid">
           <div class="mdc-layout-grid__inner">
@@ -173,10 +101,13 @@
           </div>
         </div>
       </div>
-      <div class="targetCalories"></div>
-      <div class="alcoholTotal"></div>
-      <select id="exerciseSelections"></select>
-      
+      <div class="row1">
+        <div class="exercise">
+          <div class="alcoholTotal"></div>
+          <select id="exerciseSelections"></select>
+        </div>
+        <div class="targetCalories"></div>
+      </div>
 
 
       

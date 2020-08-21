@@ -76,8 +76,8 @@ function getData(height, age, gender, weight) {
         .then(function (apiResponse) {
             console.log(apiResponse)
             $(".bmrResults").html(`
-            <h2>Calories to maintain weight: ${apiResponse.data.BMR}</h2>`)
-            $(".Goals").html(`<h2>Calories to lose weight: ${apiResponse.data.goals.BMR["Weight loss"].calory}</h2>`)
+            <h4>Calories to maintain weight: ${apiResponse.data.BMR}</h4>`)
+            $(".Goals").html(`<h4>Calories to lose weight: ${apiResponse.data.goals.BMR["Weight loss"].calory}</h4>`)
             localStorage.setItem("bmiResults", JSON.stringify(apiResponse))
         });
 
@@ -229,47 +229,49 @@ function outsideClick(e) {
 // ===================================================
 
 
-$( "bev" ).on( "click", function() {
+$(".bev").on("click", function (event) {
     event.preventDefault();
-   document.querySelector('.center');
-   html = event.tabItem.attr("label")
+    console.log("it worked");
+    getRandomCocktail();
+    document.querySelector(".center");
+    // html = event.tabItem.attr("label");
   });
-  function getRandomCocktail(){
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-    .then(
-      function(response) {
+  
+  function getRandomCocktail() {
+    fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+      .then(function (response) {
         if (response.status !== 200) {
-          console.log('Looks like there was a problem. Status Code: ' +
-            response.status);
+          console.log(
+            "Looks like there was a problem. Status Code: " + response.status
+          );
           return;
         }
   
         // Examine the text in the response
-        response.json().then(function(data) {
+        response.json().then(function (data) {
           console.log(data);
           displayRandomCocktail(data);
         });
-      }
-    )
-    .catch(function(err) {
-      console.log('Fetch Error :-S', err);
-    });
+      })
+      .catch(function (err) {
+        console.log("Fetch Error :-S", err);
+      });
   }
-  getRandomCocktail();
-
-  function displayRandomCocktail(cocktail){
-      console.log(cocktail.drinks[0]);
-
-      let drinkSection = document.querySelector('#drink-section');
-      let drinkName = document.createElement('h2');
-      drinkName.innerHTML = cocktail.drinks[0].strDrink;
-      drinkSection.appendChild(drinkName);
-      let img = document.createElement('img');
-      img.src = cocktail.drinks[0].strDrinkThumb;
-      drinkSection.appendChild(img);
-    
+  // getRandomCocktail();
+  
+  function displayRandomCocktail(cocktail) {
+    console.log(cocktail.drinks[0]);
+  
+    let drinkSection = document.querySelector("#drink-section");
+    drinkSection.innerHTML = "";
+  
+    let drinkName = document.createElement("h2");
+    drinkName.innerHTML = cocktail.drinks[0].strDrink;
+    drinkSection.appendChild(drinkName);
+    let img = document.createElement("img");
+    img.src = cocktail.drinks[0].strDrinkThumb;
+    drinkSection.appendChild(img);
   }
-
 
 // $.ajax(settings).done(function (response)) {
 //   console.log(response);
